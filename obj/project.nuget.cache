@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "BXqCOM8Ng++R13TFP+6uenPmfzUCnvMkjeEnmWZvrq2xP/gzc4PD/c0Ybo052vQXmedN3BP9VjMqEC69IT9Lgw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\artem\\source\\repos\\PongMonoGame\\PongMonoGame\\PongMonoGame.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\artem\\.nuget\\packages\\monogame.content.builder.task\\3.8.0.1641\\monogame.content.builder.task.3.8.0.1641.nupkg.sha512",
+    "C:\\Users\\artem\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.0.1641\\monogame.framework.desktopgl.3.8.0.1641.nupkg.sha512"
+  ],
+  "logs": []
+}

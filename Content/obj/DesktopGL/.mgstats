@@ -1,0 +1,4 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/artem/source/repos/PongMonoGame/PongMonoGame/Content/s_Ball.png","C:/Users/artem/source/repos/PongMonoGame/PongMonoGame/Content/bin/DesktopGL/s_Ball.xnb","TextureProcessor","Texture2DContent",178,869,0,3380736
+"C:/Users/artem/source/repos/PongMonoGame/PongMonoGame/Content/s_Bat_L.png","C:/Users/artem/source/repos/PongMonoGame/PongMonoGame/Content/bin/DesktopGL/s_Bat_L.xnb","TextureProcessor","Texture2DContent",250,3205,0,0046942
+"C:/Users/artem/source/repos/PongMonoGame/PongMonoGame/Content/s_Bat_R.png","C:/Users/artem/source/repos/PongMonoGame/PongMonoGame/Content/bin/DesktopGL/s_Bat_R.xnb","TextureProcessor","Texture2DContent",249,3205,0,0039089
