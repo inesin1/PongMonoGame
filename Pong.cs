@@ -7,12 +7,12 @@ namespace PongMonoGame
     public class Pong : Game
     {
         private GraphicsDeviceManager _graphics;    // Менеджер для работы с графикой
-        private SpriteBatch _spriteBatch;           // Объект для работы со спрайтами 
+        public SpriteBatch SpriteBatch;             // Объект для работы со спрайтами 
 
         // Игровые объекты
-        private Ball _ball = new Ball();            // Мяч
-        private Bat _batL = new Bat("left");        // Левая ракетка
-        private Bat _batR = new Bat("right");       // Правая ракетка
+        public Ball Ball;   // Мяч
+        public Bat BatL;    // Левая ракетка
+        public Bat BatR;    // Правая ракетка
 
         public Pong()
         {
@@ -26,7 +26,12 @@ namespace PongMonoGame
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+            Ball = new Ball(this);
+            BatL = new Bat(this, "left");
+            BatR = new Bat(this, "right");
+
+            BatL.Init();
+            BatR.Init();
 
             base.Initialize();
         }
@@ -36,7 +41,7 @@ namespace PongMonoGame
         /// </summary>
         protected override void LoadContent()
         {
-            _spriteBatch = new SpriteBatch(GraphicsDevice);
+            SpriteBatch = new SpriteBatch(GraphicsDevice);
 
 
         }
@@ -63,11 +68,13 @@ namespace PongMonoGame
         {
             GraphicsDevice.Clear(Color.Black);
 
-            _spriteBatch.Begin();
+            SpriteBatch.Begin();
 
+            BatL.Draw();
+            BatR.Draw();
+            //Ball.Draw();
 
-
-            _spriteBatch.End();
+            SpriteBatch.End();
 
             base.Draw(gameTime);
         }

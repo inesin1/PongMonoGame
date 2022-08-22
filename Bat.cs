@@ -6,7 +6,7 @@ using System.Text;
 
 namespace PongMonoGame
 {
-    class Bat : GameObject
+    public class Bat : GameObject
     {
         private float _speed = 100.0f;              // Скорость
         private string _side = "none";              // Сторона
@@ -15,8 +15,25 @@ namespace PongMonoGame
         /// Конструктор ракетки
         /// </summary>
         /// <param name="side">Сторона ракетки (left/right)</param>
-        public Bat(string side) {
+        public Bat(Pong context, string side) : base(context){
             _side = side;
+        }
+
+        public override void Init()
+        {
+            if (_side == "left") Texture = Context.Content.Load<Texture2D>("s_Bat_L");
+            else Texture = Context.Content.Load<Texture2D>("s_Bat_R");
+
+            base.Init();
+        }
+
+        public override void Update(float deltaTime) {
+            base.Update(deltaTime);
+        }
+
+        public override void Draw()
+        {
+            base.Draw();
         }
     }
 }
