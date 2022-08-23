@@ -17,6 +17,10 @@ namespace PongMonoGame
         public Pong()
         {
             _graphics = new GraphicsDeviceManager(this);
+            _graphics.PreferredBackBufferWidth = Variables.SCREEN_WIDTH;
+            _graphics.PreferredBackBufferHeight = Variables.SCREEN_HEIGHT;
+            _graphics.ApplyChanges();
+
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
         }
@@ -55,7 +59,7 @@ namespace PongMonoGame
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            // TODO: Add your update logic here
+            BatR.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
 
             base.Update(gameTime);
         }

@@ -12,9 +12,9 @@ namespace PongMonoGame
     public class GameObject
     {
         public Pong Context { get; }                // Контекст
-        public Vector2 Position { get; set; }       // Позиция
+        public Vector2 Position { get; set; } = Vector2.Zero; // Позиция
         public Vector2 Size { get; set; }           // Размеры
-        public Texture2D Texture { get; set; }      // Текстура
+        public Texture2D Texture { get; set; }     // Текстура
         public Rectangle CollisionBox { get; set; } // Поле столкновения
         public float Rotation { get; set; }         // Угол поворота
         public Vector2 Origin { get; set; }         // Центр координат
@@ -25,7 +25,6 @@ namespace PongMonoGame
         /// Инициализация объекта. Срабатывает один раз при создании
         /// </summary>
         public virtual void Init() {
-            Position = Vector2.Zero;
             Size = new Vector2(Texture.Width, Texture.Height);
             Rotation = 0;
             Origin = new Vector2(Size.X / 2, Size.Y / 2);

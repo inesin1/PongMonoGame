@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -21,19 +22,32 @@ namespace PongMonoGame
 
         public override void Init()
         {
-            if (_side == "left") Texture = Context.Content.Load<Texture2D>("s_Bat_L");
-            else Texture = Context.Content.Load<Texture2D>("s_Bat_R");
+            if (_side == "left")
+            {
+                Texture = Context.Content.Load<Texture2D>("s_Bat_L");
+                Position = Variables.DEFAULT_BAT_L_POSITION;
+            }
+            else
+            {
+                Texture = Context.Content.Load<Texture2D>("s_Bat_R");
+                Position = Variables.DEFAULT_BAT_R_POSITION;
+            }
 
             base.Init();
         }
 
         public override void Update(float deltaTime) {
             base.Update(deltaTime);
+
+            Input(deltaTime);
         }
 
-        public override void Draw()
-        {
-            base.Draw();
+        /// <summary>
+        /// Управление
+        /// </summary>
+        private void Input(float deltaTime) {
+            if (Keyboard.GetState().IsKeyDown(Keys.Up))
+                Position = new Vector2(Position.X, Position.Y - _speed * deltaTime);
         }
     }
 }
